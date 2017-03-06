@@ -23,24 +23,25 @@
     [:h1 "The brown bear"]
     [:h2#description "Description"]
     [:p description]
-    [:a {:href google-images} [:img#photo {:src img-src :alt "Image of Brown Bear"}]]
+    [:div [:div.img
+     [:a {:href google-images} [:img#photo {:src img-src :alt "Image of Brown Bear"}]]]]
     [:br]
     [:a {:href "https://en.wikipedia.org/wiki/Brown_bear"} "Learn More"]
     [:h2#facts "Facts"]
-    [:p "Here are some bear species:"
-     [:ol#species
-      [:li "Arctos"]
-      [:li "Collarus"]
-      [:li "Horribilis"]]
-     "The following countries have the largest populations of brown bears:"
-     [:ul#locations
-      [:li "Russia"]
-      [:li "United States, especially:"
-       [:ul
-        [:li "Alaska"]
-        [:li "Wyoming"]
-        [:li "Montana"]]]
-      [:li "Canada"]]]
+    [:p "Here are some bear species:"]
+    [:ul#species
+     [:li "Arctos"]
+     [:li "Collarus"]
+     [:li "Horribilis"]]
+    [:p "The following countries have the largest populations of brown bears:"]
+    [:ul#locations
+     [:li "Russia"]
+     [:li "United States, especially:"
+      [:ul
+       [:li "Alaska"]
+       [:li "Wyoming"]
+       [:li "Montana"]]]
+     [:li "Canada"]]
     ]])
 
 
@@ -49,5 +50,5 @@
     [:div
      static-html
      [:div "------------------"]
-     [:div "Hiccup templating courtesey of " @name]
+     [:div#re-frame "Hiccup templating courtesey of " @name]
      ]))
