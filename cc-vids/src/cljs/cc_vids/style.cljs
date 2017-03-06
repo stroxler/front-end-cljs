@@ -9,6 +9,8 @@
     (set! (.-innerHTML style-tag) css-str)))
 
 (defn get-css []
-  (g/css [:body
-        {:font-family ["Roboto" "sans-serif"]
-         :background-color "beige"}]))
+  (g/css
+   [:body {:font-family ["Roboto" "sans-serif"]
+           :background-color "beige"}]
+   [:ol#species {:color "brown"}]
+   [:#locations {:color "green"}]))

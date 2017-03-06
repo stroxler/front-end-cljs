@@ -1,26 +1,14 @@
 # cc-vids
 
-A [re-frame](https://github.com/Day8/re-frame) application designed to ... well, that part is up to you.
+## Video 1
 
-## Development Mode
+The first commit on this repo is from the end of a mildly-css-styled
+variant of [video 1](https://www.youtube.com/watch?v=DkcCfDG8ytE) from
+the CodeCademy, which covers very basic html:
+ * document and body, paragraphs, headers
+ * links `<a>` images `<img>` unordered and ordered lists `<ul>` and `<ol>`
+ * id tags and internal links
 
-### Run application:
-
-```
-lein clean
-lein figwheel dev
-```
-
-Figwheel will automatically push cljs changes to the browser.
-
-Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
-
-## Production Build
-
-
-To compile clojurescript to javascript:
-
-```
-lein clean
-lein cljsbuild once min
-```
+I skipped a few minor notes like using `<&lt;>` to get a literal `<` in
+html. I also skipped comments, since that's irrelevant when using hiccup +
+reagent.
