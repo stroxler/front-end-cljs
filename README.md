@@ -20,6 +20,11 @@ into reagent and garden.
 The starter clode in `starter` is the original code for cc-vids,
 once I had garden hooked up.
 
+How did I create the starter in the first place? I ran:
+```
+lein new re-frame cc-vids
+```
+
 To start a new html / css tutorial from scratch, all you need to do
 is start editing `views.cljs` with hiccup html syntax, and `style.cljs`
 with garden css syntax.
