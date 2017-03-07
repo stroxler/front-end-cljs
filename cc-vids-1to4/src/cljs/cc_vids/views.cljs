@@ -8,25 +8,39 @@
   Himalayan brown bear.")
 
 (def img-src
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/2010-kodiak-bear-1.jpg/440px-2010-kodiak-bear-1.jpg")
+  {:in-forest
+   "http://www.ophrysphotography.co.uk/slideshows/brownbear/medium/0004.jpg"
+   :cubs
+   "http://miriadna.com/desctopwalls/images/max/Brown-bears.jpg"
+   })
 
 (def google-images
   "https://www.google.com/search?q=brown+bears&espv=2&biw=840&bih=905&site=webhp&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjKk-Lb3sDSAhWVHsAKHQ_oDiAQ_AUIBigB")
 
+
+(defn photo-as-link [img-src descr]
+  [:a {:href google-images}
+   [:img {:src img-src :alt descr
+          :width "500px" :height "350px"}]])
+
+
 (def static-html
   [:div#container
+   [:div#header
+    [:h1 "The brown bear"]]
    [:div#nav
     [:a {:href "#description"} "description"] [:text " "]
     [:a {:href "#photo"} "photo"] [:text " "]
     [:a {:href "#facts"} "facts"] [:text " "]]
    [:div#main
-    [:h1 "The brown bear"]
     [:h2#description "Description"]
     [:p description]
-    [:div [:div.img
-     [:a {:href google-images} [:img#photo {:src img-src :alt "Image of Brown Bear"}]]]]
-    [:br]
     [:a {:href "https://en.wikipedia.org/wiki/Brown_bear"} "Learn More"]
+    [:h2#photos "Photos"]
+    (photo-as-link (img-src :in-forest) "Bears in forest")
+    [:br]
+    (photo-as-link (img-src :cubs) "Bear Cubs")
+    [:br]
     [:h2#facts "Facts"]
     [:p "Here are some bear species:"]
     [:ul#species
@@ -49,6 +63,5 @@
   (let [name (re-frame/subscribe [:name])]
     [:div
      static-html
-     [:div "------------------"]
      [:div#re-frame "Hiccup templating courtesey of " @name]
      ]))
